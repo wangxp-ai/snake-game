@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏 (Snake Game)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="score-board">
+                <span>分数: <span id="score">0</span></span>
+                <span>最高分: <span id="high-score">0</span></span>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div id="start-screen" class="overlay">
+                <h1>Snake Game</h1>
+                <p>使用方向键或 WASD 控制移动</p>
+                <p>按空格键暂停</p>
+                <button id="start-btn">开始游戏</button>
+            </div>
+            
+            <div id="game-over-screen" class="overlay hidden">
+                <h1>Game Over</h1>
+                <p>最终得分: <span id="final-score">0</span></p>
+                <button id="restart-btn">重新开始</button>
+            </div>
+
+            <div id="pause-screen" class="overlay hidden">
+                <h1>已暂停</h1>
+                <p>按空格键继续</p>
+            </div>
+        </div>
+        
+        <div class="controls-hint">
+            <p>↑ / W : 向上</p>
+            <p>↓ / S : 向下</p>
+            <p>← / A : 向左</p>
+            <p>→ / D : 向右</p>
+        </div>
+        
+        <!-- 移动端虚拟按键 -->
+        <div class="mobile-controls">
+            <div class="control-row">
+                <button id="btn-up" class="control-btn">↑</button>
+            </div>
+            <div class="control-row">
+                <button id="btn-left" class="control-btn">←</button>
+                <button id="btn-down" class="control-btn">↓</button>
+                <button id="btn-right" class="control-btn">→</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
