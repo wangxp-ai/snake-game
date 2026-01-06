@@ -13,7 +13,21 @@
     <!-- 稍后我们会生成一个二维码图片作为分享预览图，方便大家保存 -->
     <meta property="og:image" content="https://wangxp-ai.github.io/snake-game/share-preview.png">
 
+    <!-- Web App 支持 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="贪吃蛇">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
     <link rel="stylesheet" href="style.css">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="game-container">
